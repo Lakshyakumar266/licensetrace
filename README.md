@@ -144,7 +144,7 @@ bun run lint
 
 ### Architecture Overview
 
-![LicenseTrace Architecture](assets/architecture.svg)
+![LicenseTrace Architecture](assets/architecture.png)
 
 ### Test Coverage Highlights
 - `tests/unit/`: Bounded excerpt truncation, binary file detection, case-insensitive path identification, SHA-256 hashing, zero-dependency schema validation, reporting language rules.
