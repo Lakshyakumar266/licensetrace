@@ -1,0 +1,25 @@
+{
+  "run_id": "run-1793132608105-37c2bd33",
+  "tool_name": "licensetrace",
+  "tool_version": "0.1.0",
+  "target_path": "repos/co",
+  "target_revision": "249bbdc72da24ae44076afd716349d2089b31c4c",
+  "is_git_repository": true,
+  "shallow_history": true,
+  "options": {
+    "offline": true,
+    "network": false,
+    "output_dir": "reports/validation/co",
+    "include_history": true,
+    "max_file_size_bytes": 1048576,
+    "max_history_commits": 50
+  },
+  "started_at": "2026-10-27T20:23:28.105Z",
+  "completed_at": "2026-10-27T20:23:28.111Z",
+  "collection_summary": {
+    "evidence_count": 7,
+    "findings_count": 3,
+    "conflicts_count": 0,
+    "failed_collections": 0
+  }
+}

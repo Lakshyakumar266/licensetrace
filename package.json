@@ -24,8 +24,8 @@
     "spdx",
     "compliance"
   ],
-  "author": "LicenseTrace Contributors",
-  "license": "Apache-2.0",
+  "author": "Lakshya kumar",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^22.13.9",

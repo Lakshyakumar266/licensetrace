@@ -1,0 +1,160 @@
+{
+  "schema_version": "0.1.0",
+  "manifest": {
+    "run_id": "run-1793132597604-a6294ca1",
+    "tool_name": "licensetrace",
+    "tool_version": "0.1.0",
+    "target_path": "repos/p-limit",
+    "target_revision": "a8a6fbec4e0e866d6d779b10889bb4f5567e70eb",
+    "is_git_repository": true,
+    "shallow_history": true,
+    "options": {
+      "offline": true,
+      "network": false,
+      "output_dir": "reports/validation/p-limit",
+      "include_history": true,
+      "max_file_size_bytes": 1048576,
+      "max_history_commits": 50
+    },
+    "started_at": "2026-10-27T20:23:17.604Z",
+    "completed_at": "2026-10-27T20:23:17.609Z",
+    "collection_summary": {
+      "evidence_count": 6,
+      "findings_count": 3,
+      "conflicts_count": 0,
+      "failed_collections": 0
+    }
+  },
+  "evidence": [
+    {
+      "id": "E-0001",
+      "kind": "license_file",
+      "classification": "direct",
+      "claim": "License-like file found at 'license' (10 lines)",
+      "source": "license",
+      "locator": "L1-L10",
+      "observed_at": "2026-10-27T20:23:17.605Z",
+      "content_hash": {
+        "algorithm": "sha256",
+        "digest": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      },
+      "excerpt": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "limitations": "Presence of text does not prove legal authorship or enforceability.",
+      "retrieval": {
+        "method": "filesystem_read",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0002",
+      "kind": "package_metadata",
+      "classification": "corroborating",
+      "claim": "Package manifest 'package.json' declares license: MIT",
+      "source": "package.json",
+      "locator": "L1-L59",
+      "observed_at": "2026-10-27T20:23:17.606Z",
+      "content_hash": {
+        "algorithm": "sha256",
+        "digest": "daa6b0d168d7197eccbfef1c678e8f00b79d063129bf48f4ee2db38dc605ca7f"
+      },
+      "excerpt": "{\n\t\"name\": \"p-limit\",\n\t\"version\": \"7.3.3\",\n\t\"description\": \"Run multiple promise-returning & async functions with limited concurrency\",\n\t\"license\": \"MIT\",\n\t\"repository\": \"sindresorhus/p-limit\",\n\t\"funding\": \"https://github.com/sponsors/sindresorhus\",\n\t\"author\": {\n\t\t\"name\": \"Sindre Sorhus\",\n\t\t\"email\": \"sindresorhus@gmail.com\",\n\t\t\"url\": \"https://sindresorhus.com\"\n\t},\n\t\"type\": \"module\",\n\t\"exports\": {\n\t\t\"types\": \"./index.d.ts\",\n\t\t\"default\": \"./index.js\"\n\t},\n\t\"sideEffects\": false,\n\t\"engines\": {\n\t\t\"node\": \">=20\"\n\t},\n\t\"scripts\": {\n\t\t\"test\": \"xo && ava && tsd\",\n\t\t\"benchmark\": \"node benchmark.js\"\n\t},\n\t\"files\": [\n\t\t\"index.js\",\n\t\t\"index.d.ts\"\n\t],\n\t\"keywords\": [\n\t\t\"promise\",\n\t\t\"limit\",\n\t\t\"limited\",\n\t\t\"concurrency\",\n\t\t\"throttle\",\n\t\t\"throat\",\n\t\t\"rate\",\n\t\t\"batch\",\n\t\t\"ratelimit\",\n\t\t\"task\",\n\t\t\"queue\",\n\t\t\"async\",\n\t\t\"await\",\n\t\t\"promises\",\n\t\t\"bluebird\"\n\t],\n\t\"dependencies\": {\n\t\t\"yocto-queue\": \"^1.2.1\"\n\t},\n\t\"devDependencies\": {\n\t\t\"ava\": \"^6.4.1\",\n\t\t\"in-range\": \"^3.0.0\",\n\t\t\"random-int\": \"^3.0.0\",\n\t\t\"time-span\": \"^5.1.0\",\n\t\t\"tsd\": \"^0.33.0\",\n\t\t\"xo\": \"^1.2.1\"\n\t}\n}\n",
+      "limitations": "Package manifest strings may diverge from actual repository license terms.",
+      "retrieval": {
+        "method": "manifest_parse",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0003",
+      "kind": "git_commit",
+      "classification": "corroborating",
+      "claim": "File 'license' first recorded in commit 0038c55 by Sindre Sorhus on 2020-06-06T19:52:57+08:00",
+      "source": "0038c559658ad75445de4b3a8c6e0167129e813c",
+      "locator": "license",
+      "observed_at": "2026-10-27T20:23:17.608Z",
+      "excerpt": "Commit: 0038c559658ad75445de4b3a8c6e0167129e813c\nAuthor: Sindre Sorhus\nDate: 2020-06-06T19:52:57+08:00\nSubject: 3.0.0",
+      "limitations": "Git commits establish repository history, not independent legal ownership.",
+      "retrieval": {
+        "method": "git_log",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0004",
+      "kind": "git_commit",
+      "classification": "corroborating",
+      "claim": "File 'package.json' first recorded in commit 0038c55 by Sindre Sorhus on 2020-06-06T19:52:57+08:00",
+      "source": "0038c559658ad75445de4b3a8c6e0167129e813c",
+      "locator": "package.json",
+      "observed_at": "2026-10-27T20:23:17.608Z",
+      "excerpt": "Commit: 0038c559658ad75445de4b3a8c6e0167129e813c\nAuthor: Sindre Sorhus\nDate: 2020-06-06T19:52:57+08:00\nSubject: 3.0.0",
+      "limitations": "Git commits establish repository history, not independent legal ownership.",
+      "retrieval": {
+        "method": "git_log",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0005",
+      "kind": "git_commit",
+      "classification": "corroborating",
+      "claim": "File 'readme.md' first recorded in commit 0038c55 by Sindre Sorhus on 2020-06-06T19:52:57+08:00",
+      "source": "0038c559658ad75445de4b3a8c6e0167129e813c",
+      "locator": "readme.md",
+      "observed_at": "2026-10-27T20:23:17.608Z",
+      "excerpt": "Commit: 0038c559658ad75445de4b3a8c6e0167129e813c\nAuthor: Sindre Sorhus\nDate: 2020-06-06T19:52:57+08:00\nSubject: 3.0.0",
+      "limitations": "Git commits establish repository history, not independent legal ownership.",
+      "retrieval": {
+        "method": "git_log",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0006",
+      "kind": "remote_metadata",
+      "classification": "context_only",
+      "claim": "Configured Git remote 'origin': https://github.com/sindresorhus/p-limit.git",
+      "source": "https://github.com/sindresorhus/p-limit.git",
+      "locator": "origin",
+      "observed_at": "2026-10-27T20:23:17.608Z",
+      "excerpt": "remote.origin.url=https://github.com/sindresorhus/p-limit.git",
+      "limitations": "Remote configuration does not establish that the remote is reachable or current.",
+      "retrieval": {
+        "method": "git_remote",
+        "status": "succeeded"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-0001",
+      "statement": "Found 1 license-like file(s) in repository: license",
+      "status": "supported",
+      "evidence_ids": [
+        "E-0001"
+      ],
+      "inferences_and_limitations": "Text was extracted from files matching standard license file names. The presence of a file does not constitute a legal determination of rights."
+    },
+    {
+      "id": "F-0002",
+      "statement": "Inspected package manifest declaration(s) in: package.json",
+      "status": "supported",
+      "evidence_ids": [
+        "E-0002"
+      ],
+      "inferences_and_limitations": "Package manifest fields reflect declarations in package manager configurations and may differ from source code headers or repository licenses."
+    },
+    {
+      "id": "F-0003",
+      "statement": "Collected Git history records tracing addition/modification of license-relevant paths (3 record(s))",
+      "status": "supported",
+      "evidence_ids": [
+        "E-0003",
+        "E-0004",
+        "E-0005"
+      ],
+      "inferences_and_limitations": "Git commit logs reflect recorded commit history in this clone. Commits could have been amended, rebased, or truncated if history is shallow."
+    }
+  ],
+  "conflicts": []
+}

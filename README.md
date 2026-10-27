@@ -2,7 +2,7 @@
 
 [![Tests](https://img.shields.io/badge/tests-29%20passed-brightgreen.svg)]()
 [![Runtime](https://img.shields.io/badge/runtime-Bun%201.3%2B-black.svg)]()
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 **LicenseTrace** is a read-only, evidence-first investigation workflow and portable agent skill for auditing missing, conflicting, or historically ambiguous software license and attribution evidence.
 
@@ -43,10 +43,10 @@ Install LicenseTrace directly into your AI coding assistant (Cursor, Claude Code
 
 ```bash
 # Install to current project agents
-npx skills add https://github.com/developer/licensetrace
+npx skills add https://github.com/Lakshyakumar266/licensetrace
 
 # Or install globally for all projects
-npx skills add https://github.com/developer/licensetrace -g
+npx skills add https://github.com/Lakshyakumar266/licensetrace -g
 ```
 
 ### Standalone CLI Usage (Zero Runtime Dependencies)
@@ -142,22 +142,23 @@ bun run typecheck
 bun run lint
 ```
 
+### Architecture Overview
+
+![LicenseTrace Architecture](assets/architecture.svg)
+
 ### Test Coverage Highlights
-- `tests/unit/`: Bounded excerpt truncation, binary file detection, case-insensitive path identification, SHA-256 hashing, Zod schema validation, reporting language rules.
+- `tests/unit/`: Bounded excerpt truncation, binary file detection, case-insensitive path identification, SHA-256 hashing, zero-dependency schema validation, reporting language rules.
 - `tests/integration/`: Clear license fixtures, conflicting license fixtures, missing license fixtures, Git history addition/deletion timelines, spaces in paths, non-Git directories, prompt injection resistance, and target working tree read-only guarantees.
+- `reports/validation/`: Real-world testing against public open-source repositories (`sindresorhus/p-limit`, `tj/co`, `Rich-Harris/devalue`). See [Validation Summary](reports/validation/SUMMARY.md).
 
 ---
 
-## Specifications & Documentation
+## Specifications & References
 
-- [Product Requirements Document (PRD)](./docs/PRD.md)
-- [Implementation Plan](./docs/IMPLEMENTATION_PLAN.md)
-- [Test Plan](./docs/TEST_PLAN.md)
-- [Workflow Specification](./docs/WORKFLOW.md)
-- [Agent Skill Prompt](./docs/AGENT_PROMPT.md)
-- [Prior Art Deep Dive](./docs/PRIOR_ART.md)
+- [Skill Specification](./SKILL.md)
 - [Evidence Schema Reference](./references/evidence-schema.md)
 - [Reporting Language Rules](./references/reporting-rules.md)
+- [Real-Repository Validation Summary](./reports/validation/SUMMARY.md)
 
 ---
 
@@ -167,5 +168,5 @@ bun run lint
 
 ## License
 
-This project is licensed under the [Apache License, Version 2.0](./LICENSE).  
+This project is licensed under the [MIT License](./LICENSE).  
 *Notice: This license applies solely to the LicenseTrace codebase, and does NOT alter the licensing terms of any third-party repositories analyzed by LicenseTrace.*

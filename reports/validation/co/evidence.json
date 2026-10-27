@@ -1,0 +1,179 @@
+{
+  "schema_version": "0.1.0",
+  "manifest": {
+    "run_id": "run-1793132608105-37c2bd33",
+    "tool_name": "licensetrace",
+    "tool_version": "0.1.0",
+    "target_path": "repos/co",
+    "target_revision": "249bbdc72da24ae44076afd716349d2089b31c4c",
+    "is_git_repository": true,
+    "shallow_history": true,
+    "options": {
+      "offline": true,
+      "network": false,
+      "output_dir": "reports/validation/co",
+      "include_history": true,
+      "max_file_size_bytes": 1048576,
+      "max_history_commits": 50
+    },
+    "started_at": "2026-10-27T20:23:28.105Z",
+    "completed_at": "2026-10-27T20:23:28.111Z",
+    "collection_summary": {
+      "evidence_count": 7,
+      "findings_count": 3,
+      "conflicts_count": 0,
+      "failed_collections": 0
+    }
+  },
+  "evidence": [
+    {
+      "id": "E-0001",
+      "kind": "license_file",
+      "classification": "direct",
+      "claim": "License-like file found at 'LICENSE' (23 lines)",
+      "source": "LICENSE",
+      "locator": "L1-L23",
+      "observed_at": "2026-10-27T20:23:28.106Z",
+      "content_hash": {
+        "algorithm": "sha256",
+        "digest": "26732c10f98c9debd23139eb603dff2a5794fb2260d53577bc058fe3e9c796f0"
+      },
+      "excerpt": "(The MIT License)\n\nCopyright (c) 2014 TJ Holowaychuk &lt;tj@vision-media.ca&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "limitations": "Presence of text does not prove legal authorship or enforceability.",
+      "retrieval": {
+        "method": "filesystem_read",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0002",
+      "kind": "package_metadata",
+      "classification": "corroborating",
+      "claim": "Package manifest 'package.json' declares license: MIT",
+      "source": "package.json",
+      "locator": "L1-L36",
+      "observed_at": "2026-10-27T20:23:28.107Z",
+      "content_hash": {
+        "algorithm": "sha256",
+        "digest": "e6b5efc8fe55233e180a4fa6e3a1f4d4968aa96c9944975e4dae69efbe830c51"
+      },
+      "excerpt": "{\n  \"name\": \"co\",\n  \"version\": \"4.6.0\",\n  \"description\": \"generator async control flow goodness\",\n  \"keywords\": [\n    \"async\",\n    \"flow\",\n    \"generator\",\n    \"coro\",\n    \"coroutine\"\n  ],\n  \"devDependencies\": {\n    \"browserify\": \"^10.0.0\",\n    \"istanbul-harmony\": \"0\",\n    \"mocha\": \"^2.0.0\",\n    \"mz\": \"^1.0.2\"\n  },\n  \"scripts\": {\n    \"test\": \"mocha --harmony\",\n    \"test-cov\": \"node --harmony node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter dot\",\n    \"test-travis\": \"node --harmony node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --reporter dot\",\n    \"prepublish\": \"npm run browserify\",\n    \"browserify\": \"browserify index.js -o ./co-browser.js -s co\"\n  },\n  \"files\": [\n    \"co-browser.js\",\n    \"index.js\"\n  ],\n  \"license\": \"MIT\",\n  \"repository\": \"tj/co\",\n  \"engines\": {\n    \"iojs\": \">= 1.0.0\",\n    \"node\": \">= 0.12.0\"\n  }\n}\n",
+      "limitations": "Package manifest strings may diverge from actual repository license terms.",
+      "retrieval": {
+        "method": "manifest_parse",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0003",
+      "kind": "readme_statement",
+      "classification": "corroborating",
+      "claim": "README section '## License' found in 'Readme.md'",
+      "source": "Readme.md",
+      "locator": "L199-L213",
+      "observed_at": "2026-10-27T20:23:28.110Z",
+      "content_hash": {
+        "algorithm": "sha256",
+        "digest": "38e8686114e87a2879950de8a26bad301d502571516b482a55e909eb884f58ca"
+      },
+      "excerpt": "## License\n\n  MIT\n\n[npm-image]: https://img.shields.io/npm/v/co.svg?style=flat-square\n[npm-url]: https://npmjs.org/package/co\n[travis-image]: https://img.shields.io/travis/tj/co.svg?style=flat-square\n[travis-url]: https://travis-ci.org/tj/co\n[coveralls-image]: https://img.shields.io/coveralls/tj/co.svg?style=flat-square\n[coveralls-url]: https://coveralls.io/r/tj/co\n[downloads-image]: http://img.shields.io/npm/dm/co.svg?style=flat-square\n[downloads-url]: https://npmjs.org/package/co\n[gitter-image]: https://badges.gitter.im/Join%20Chat.svg\n[gitter-url]: https://gitter.im/tj/co?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge\n",
+      "limitations": "README statements may describe informal terms or be outdated.",
+      "retrieval": {
+        "method": "readme_extract",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0004",
+      "kind": "git_commit",
+      "classification": "corroborating",
+      "claim": "File 'LICENSE' first recorded in commit 4d2a63c by Jonathan Ong on 2014-10-27T21:50:00-07:00",
+      "source": "4d2a63cad5788dd3fcdecfee7f2e43c19d0116ec",
+      "locator": "LICENSE",
+      "observed_at": "2026-10-27T20:23:28.110Z",
+      "excerpt": "Commit: 4d2a63cad5788dd3fcdecfee7f2e43c19d0116ec\nAuthor: Jonathan Ong\nDate: 2014-10-27T21:50:00-07:00\nSubject: switch to a promise implementation",
+      "limitations": "Git commits establish repository history, not independent legal ownership.",
+      "retrieval": {
+        "method": "git_log",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0005",
+      "kind": "git_commit",
+      "classification": "corroborating",
+      "claim": "File 'package.json' first recorded in commit 4d2a63c by Jonathan Ong on 2014-10-27T21:50:00-07:00",
+      "source": "4d2a63cad5788dd3fcdecfee7f2e43c19d0116ec",
+      "locator": "package.json",
+      "observed_at": "2026-10-27T20:23:28.110Z",
+      "excerpt": "Commit: 4d2a63cad5788dd3fcdecfee7f2e43c19d0116ec\nAuthor: Jonathan Ong\nDate: 2014-10-27T21:50:00-07:00\nSubject: switch to a promise implementation",
+      "limitations": "Git commits establish repository history, not independent legal ownership.",
+      "retrieval": {
+        "method": "git_log",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0006",
+      "kind": "git_commit",
+      "classification": "corroborating",
+      "claim": "File 'Readme.md' first recorded in commit 4d2a63c by Jonathan Ong on 2014-10-27T21:50:00-07:00",
+      "source": "4d2a63cad5788dd3fcdecfee7f2e43c19d0116ec",
+      "locator": "Readme.md",
+      "observed_at": "2026-10-27T20:23:28.110Z",
+      "excerpt": "Commit: 4d2a63cad5788dd3fcdecfee7f2e43c19d0116ec\nAuthor: Jonathan Ong\nDate: 2014-10-27T21:50:00-07:00\nSubject: switch to a promise implementation",
+      "limitations": "Git commits establish repository history, not independent legal ownership.",
+      "retrieval": {
+        "method": "git_log",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0007",
+      "kind": "remote_metadata",
+      "classification": "context_only",
+      "claim": "Configured Git remote 'origin': https://github.com/tj/co.git",
+      "source": "https://github.com/tj/co.git",
+      "locator": "origin",
+      "observed_at": "2026-10-27T20:23:28.110Z",
+      "excerpt": "remote.origin.url=https://github.com/tj/co.git",
+      "limitations": "Remote configuration does not establish that the remote is reachable or current.",
+      "retrieval": {
+        "method": "git_remote",
+        "status": "succeeded"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-0001",
+      "statement": "Found 1 license-like file(s) in repository: LICENSE",
+      "status": "supported",
+      "evidence_ids": [
+        "E-0001"
+      ],
+      "inferences_and_limitations": "Text was extracted from files matching standard license file names. The presence of a file does not constitute a legal determination of rights."
+    },
+    {
+      "id": "F-0002",
+      "statement": "Inspected package manifest declaration(s) in: package.json",
+      "status": "supported",
+      "evidence_ids": [
+        "E-0002"
+      ],
+      "inferences_and_limitations": "Package manifest fields reflect declarations in package manager configurations and may differ from source code headers or repository licenses."
+    },
+    {
+      "id": "F-0003",
+      "statement": "Collected Git history records tracing addition/modification of license-relevant paths (3 record(s))",
+      "status": "supported",
+      "evidence_ids": [
+        "E-0004",
+        "E-0005",
+        "E-0006"
+      ],
+      "inferences_and_limitations": "Git commit logs reflect recorded commit history in this clone. Commits could have been amended, rebased, or truncated if history is shallow."
+    }
+  ],
+  "conflicts": []
+}

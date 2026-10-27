@@ -1,0 +1,195 @@
+{
+  "schema_version": "0.1.0",
+  "manifest": {
+    "run_id": "run-1793132615589-f9389f14",
+    "tool_name": "licensetrace",
+    "tool_version": "0.1.0",
+    "target_path": "repos/devalue",
+    "target_revision": "b0b7a4ccd30b9902e8653babe4269fa002505c2a",
+    "is_git_repository": true,
+    "shallow_history": true,
+    "options": {
+      "offline": true,
+      "network": false,
+      "output_dir": "reports/validation/devalue",
+      "include_history": true,
+      "max_file_size_bytes": 1048576,
+      "max_history_commits": 50
+    },
+    "started_at": "2026-10-27T20:23:35.589Z",
+    "completed_at": "2026-10-27T20:23:35.602Z",
+    "collection_summary": {
+      "evidence_count": 8,
+      "findings_count": 3,
+      "conflicts_count": 0,
+      "failed_collections": 0
+    }
+  },
+  "evidence": [
+    {
+      "id": "E-0001",
+      "kind": "license_file",
+      "classification": "direct",
+      "claim": "License-like file found at 'LICENSE' (8 lines)",
+      "source": "LICENSE",
+      "locator": "L1-L8",
+      "observed_at": "2026-10-27T20:23:35.591Z",
+      "content_hash": {
+        "algorithm": "sha256",
+        "digest": "c8c3b3bf9c46aa46232a552b9c3300cfa4f15b48fcd1ae5e09d77a5684d94f69"
+      },
+      "excerpt": "Copyright (c) 2018-19 [these people](https://github.com/rich-harris/devalue/graphs/contributors)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "limitations": "Presence of text does not prove legal authorship or enforceability.",
+      "retrieval": {
+        "method": "filesystem_read",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0002",
+      "kind": "package_metadata",
+      "classification": "corroborating",
+      "claim": "Package manifest 'package.json' declares license: MIT",
+      "source": "package.json",
+      "locator": "L1-L50",
+      "observed_at": "2026-10-27T20:23:35.592Z",
+      "content_hash": {
+        "algorithm": "sha256",
+        "digest": "0912cacb07292c90ccd43e27480046b90d45939ef390097020899bd0143f87ca"
+      },
+      "excerpt": "{\n  \"name\": \"devalue\",\n  \"description\": \"Gets the job done when JSON.stringify can't\",\n  \"version\": \"6.0.3\",\n  \"repository\": \"sveltejs/devalue\",\n  \"sideEffects\": false,\n  \"exports\": {\n    \".\": {\n      \"types\": \"./types/types.d.ts\",\n      \"import\": \"./src/index.js\",\n      \"default\": \"./src/index.js\"\n    }\n  },\n  \"files\": [\n    \"src\",\n    \"types\"\n  ],\n  \"types\": \"./types/types.d.ts\",\n  \"engines\": {\n    \"node\": \">=18\"\n  },\n  \"devDependencies\": {\n    \"@changesets/cli\": \"^2.29.6\",\n    \"@js-temporal/polyfill\": \"^0.5.1\",\n    \"@types/node\": \"^24.12.0\",\n    \"prettier\": \"^3.2.4\",\n    \"publint\": \"^0.3.12\",\n    \"typescript\": \"^7.0.2\",\n    \"vite\": \"8.3.0\",\n    \"vitest\": \"5.0.1\"\n  },\n  \"scripts\": {\n    \"changeset:version\": \"changeset version\",\n    \"changeset:publish\": \"changeset publish\",\n    \"build\": \"tsc\",\n    \"test\": \"vitest run --project unit\",\n    \"test:unit\": \"vitest run --project unit\",\n    \"test:watch\": \"vitest --project unit\",\n    \"test:types\": \"tsc -p . --noEmit\",\n    \"check:format\": \"prettier --check .\",\n    \"format\": \"prettier --write .\",\n    \"prepublishOnly\": \"npm test && npm run test:types && npm run build && publint\",\n    \"bench\": \"node --allow-natives-syntax ./benchmarking/run.js\",\n    \"bench:compare\": \"node --allow-natives-syntax ./benchmarking/compare/index.js\"\n  },\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"packageManager\": \"pnpm@10.33.4+sha512.1c67b3b359b2d408119ba1ed289f34b8fc3c6873412bec6fd264fbdc82489e510fcbecb9ce9d22dae7f3b76269d8441046014bdca53b9979cd7a561ad631b800\"\n}\n",
+      "limitations": "Package manifest strings may diverge from actual repository license terms.",
+      "retrieval": {
+        "method": "manifest_parse",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0003",
+      "kind": "readme_statement",
+      "classification": "corroborating",
+      "claim": "README section '## License' found in 'README.md'",
+      "source": "README.md",
+      "locator": "L342-L345",
+      "observed_at": "2026-10-27T20:23:35.601Z",
+      "content_hash": {
+        "algorithm": "sha256",
+        "digest": "c84d2f8fbf1fd62a51f8305d22a132d98d0a6857b2766e90fd389d2d80cc354e"
+      },
+      "excerpt": "## License\n\n[MIT](LICENSE)\n",
+      "limitations": "README statements may describe informal terms or be outdated.",
+      "retrieval": {
+        "method": "readme_extract",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0004",
+      "kind": "git_commit",
+      "classification": "corroborating",
+      "claim": "File 'LICENSE' first recorded in commit cd6da94 by Gabriel Stellini on 2026-07-18T07:27:32+03:00",
+      "source": "cd6da94500f6ed23bd501fd1e9a18341d814938b",
+      "locator": "LICENSE",
+      "observed_at": "2026-10-27T20:23:35.601Z",
+      "excerpt": "Commit: cd6da94500f6ed23bd501fd1e9a18341d814938b\nAuthor: Gabriel Stellini\nDate: 2026-07-18T07:27:32+03:00\nSubject: fix: resolve circular references through custom revivers (#154)",
+      "limitations": "Git commits establish repository history, not independent legal ownership.",
+      "retrieval": {
+        "method": "git_log",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0005",
+      "kind": "git_commit",
+      "classification": "corroborating",
+      "claim": "File 'package.json' first recorded in commit cd6da94 by Gabriel Stellini on 2026-07-18T07:27:32+03:00",
+      "source": "cd6da94500f6ed23bd501fd1e9a18341d814938b",
+      "locator": "package.json",
+      "observed_at": "2026-10-27T20:23:35.601Z",
+      "excerpt": "Commit: cd6da94500f6ed23bd501fd1e9a18341d814938b\nAuthor: Gabriel Stellini\nDate: 2026-07-18T07:27:32+03:00\nSubject: fix: resolve circular references through custom revivers (#154)",
+      "limitations": "Git commits establish repository history, not independent legal ownership.",
+      "retrieval": {
+        "method": "git_log",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0006",
+      "kind": "git_commit",
+      "classification": "corroborating",
+      "claim": "File 'README.md' first recorded in commit cd6da94 by Gabriel Stellini on 2026-07-18T07:27:32+03:00",
+      "source": "cd6da94500f6ed23bd501fd1e9a18341d814938b",
+      "locator": "README.md",
+      "observed_at": "2026-10-27T20:23:35.601Z",
+      "excerpt": "Commit: cd6da94500f6ed23bd501fd1e9a18341d814938b\nAuthor: Gabriel Stellini\nDate: 2026-07-18T07:27:32+03:00\nSubject: fix: resolve circular references through custom revivers (#154)",
+      "limitations": "Git commits establish repository history, not independent legal ownership.",
+      "retrieval": {
+        "method": "git_log",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0007",
+      "kind": "git_commit",
+      "classification": "corroborating",
+      "claim": "File 'test/README.md' first recorded in commit cf16137 by Elliott Johnson on 2026-09-18T16:15:24-06:00",
+      "source": "cf1613741f84a7ab2df5c80cce69da392a2eb97c",
+      "locator": "test/README.md",
+      "observed_at": "2026-10-27T20:23:35.601Z",
+      "excerpt": "Commit: cf1613741f84a7ab2df5c80cce69da392a2eb97c\nAuthor: Elliott Johnson\nDate: 2026-09-18T16:15:24-06:00\nSubject: chore: migrate tests to Vitest (#194)",
+      "limitations": "Git commits establish repository history, not independent legal ownership.",
+      "retrieval": {
+        "method": "git_log",
+        "status": "succeeded"
+      }
+    },
+    {
+      "id": "E-0008",
+      "kind": "remote_metadata",
+      "classification": "context_only",
+      "claim": "Configured Git remote 'origin': https://github.com/Rich-Harris/devalue.git",
+      "source": "https://github.com/Rich-Harris/devalue.git",
+      "locator": "origin",
+      "observed_at": "2026-10-27T20:23:35.601Z",
+      "excerpt": "remote.origin.url=https://github.com/Rich-Harris/devalue.git",
+      "limitations": "Remote configuration does not establish that the remote is reachable or current.",
+      "retrieval": {
+        "method": "git_remote",
+        "status": "succeeded"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-0001",
+      "statement": "Found 1 license-like file(s) in repository: LICENSE",
+      "status": "supported",
+      "evidence_ids": [
+        "E-0001"
+      ],
+      "inferences_and_limitations": "Text was extracted from files matching standard license file names. The presence of a file does not constitute a legal determination of rights."
+    },
+    {
+      "id": "F-0002",
+      "statement": "Inspected package manifest declaration(s) in: package.json",
+      "status": "supported",
+      "evidence_ids": [
+        "E-0002"
+      ],
+      "inferences_and_limitations": "Package manifest fields reflect declarations in package manager configurations and may differ from source code headers or repository licenses."
+    },
+    {
+      "id": "F-0003",
+      "statement": "Collected Git history records tracing addition/modification of license-relevant paths (4 record(s))",
+      "status": "supported",
+      "evidence_ids": [
+        "E-0004",
+        "E-0005",
+        "E-0006",
+        "E-0007"
+      ],
+      "inferences_and_limitations": "Git commit logs reflect recorded commit history in this clone. Commits could have been amended, rebased, or truncated if history is shallow."
+    }
+  ],
+  "conflicts": []
+}

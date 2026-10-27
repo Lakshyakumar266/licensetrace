@@ -1,0 +1,25 @@
+{
+  "run_id": "run-1793132597604-a6294ca1",
+  "tool_name": "licensetrace",
+  "tool_version": "0.1.0",
+  "target_path": "repos/p-limit",
+  "target_revision": "a8a6fbec4e0e866d6d779b10889bb4f5567e70eb",
+  "is_git_repository": true,
+  "shallow_history": true,
+  "options": {
+    "offline": true,
+    "network": false,
+    "output_dir": "reports/validation/p-limit",
+    "include_history": true,
+    "max_file_size_bytes": 1048576,
+    "max_history_commits": 50
+  },
+  "started_at": "2026-10-27T20:23:17.604Z",
+  "completed_at": "2026-10-27T20:23:17.609Z",
+  "collection_summary": {
+    "evidence_count": 6,
+    "findings_count": 3,
+    "conflicts_count": 0,
+    "failed_collections": 0
+  }
+}
