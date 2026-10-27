@@ -1,0 +1,9 @@
+node_modules/
+.licensetrace/
+dist/
+.DS_Store
+Thumbs.db
+*.log
+skills-lock.json
+
+.agents

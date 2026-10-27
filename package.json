@@ -1,0 +1,35 @@
+{
+  "name": "licensetrace",
+  "version": "0.1.0",
+  "description": "Evidence-first investigation workflow for missing, conflicting, or historically ambiguous software license and attribution evidence.",
+  "main": "scripts/licensetrace.ts",
+  "type": "module",
+  "bin": {
+    "licensetrace": "./scripts/licensetrace.ts"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "lint": "bun run typecheck",
+    "licensetrace": "bun run scripts/licensetrace.ts"
+  },
+  "keywords": [
+    "agent-skill",
+    "license",
+    "attribution",
+    "provenance",
+    "evidence",
+    "audit",
+    "git",
+    "spdx",
+    "compliance"
+  ],
+  "author": "LicenseTrace Contributors",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "bun-types": "^1.4.4",
+    "typescript": "^5.8.2"
+  }
+}
